@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>爬虫工具</title>
+  <style>
+    * {
+      font-family: "微软雅黑";
+      margin: 0;
+    }
+    .main-content{
+      width: 400px;
+      margin:0 auto;
+      height: 100%;
+      margin-top: 75px;
+      margin-bottom: 75px;
+    }
+    #start{
+      float:right;
+    }
+
+    button {
+      border:none;
+      background-color:cornflowerblue;
+      color:white; 
+      height:25px;
+      width:60px;
+      font-size:16px;
+      margin-top:20px;
+      margin-right:18px
+    }
+
+    button[disabled=true], button:disabled {
+      background-color: grey
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <div id="info" style="display:none; font-size:40px;color:red">
+      爬取中...
+    </div>
+    <input onchange="setCsvPath(this)" type="file" id="inputcsv" accept=".csv" hidden /> URL文件：
+    <input type="text" id="filepath" style="width:251px"><input type="button"  value="选择" onclick="document.getElementById('inputcsv').click()">
+    <div>
+      <button onclick="scrapy()" id="start">开始</button>
+    </div>
+  </div>
+  <script>
+    let setCsvPath = require('./lib/renderer.js').setCsvPath;
+    let scrapy = require('./lib/renderer.js').scrapy;
+  </script>
+</body>
+
+</html>

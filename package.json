@@ -1,0 +1,34 @@
+{
+  "name": "webscrapy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "babel src -d lib",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "sca",
+    "asar": true,
+    "win": {
+      "target": "zip"
+    }
+  },
+  "author": "KnightSpirit",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "electron": "~1.6.2",
+    "electron-builder": "^19.26.3",
+    "electron-winstaller": "^2.6.3"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.1",
+    "line-by-line": "^0.1.5",
+    "ms": "^2.0.0"
+  }
+}
